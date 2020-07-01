@@ -6,6 +6,7 @@ import Member from '../Items/Member';
 
 const MainHeaderBlock = styled.div`
   display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 72px;
   padding: 0 15% 0 15%;
