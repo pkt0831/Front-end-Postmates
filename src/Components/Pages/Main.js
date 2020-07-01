@@ -7,13 +7,13 @@ import MainBanner from '../Layout/MainBanner';
 import DeliverySection from '../Layout/DeliverySection';
 import Footer from '../Layout/Footer';
 import MainProducts from '../../Assets/mainProducts.png';
+import MainHeader from '../Layout/MainHeader';
 
 const MainPage = () => {
   return (
     <div>
       <globalStyles />
-      <h1>Main page header</h1>
-      <hr />
+      <MainHeader />
       <MainBanner
         title="Want Burgers?"
         text="Food, drinks, groceries, and more available for delivery and pickup."
