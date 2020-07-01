@@ -3,7 +3,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
-
 import FeedHeader from '../Layout/FeedHeader';
 import SubBanner from '../Layout/SubBanner';
 import SubHeader from '../Layout/SubHeader';

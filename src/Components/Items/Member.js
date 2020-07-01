@@ -5,8 +5,8 @@ const MemberWrap = styled.div`
   display: flex;
   width: 18%;
   height: 100%;
-  /* background: red; */
   align-items: center;
+  justify-content: center;
 `;
 const LoginBtn = styled.button`
   justify-content: center;
