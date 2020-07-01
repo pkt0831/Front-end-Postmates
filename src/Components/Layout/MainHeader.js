@@ -9,7 +9,7 @@ const MainHeaderBlock = styled.div`
   width: 100%;
   height: 72px;
   padding: 0 15% 0 15%;
-  /* background: #ffdf18; */
+  background: #ffdf18;
 `;
 
 const MainHeader = () => {
