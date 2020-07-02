@@ -5,8 +5,9 @@ const MainMenuWrap = styled.div`
   display: flex;
   width: 450px;
   height: 100%;
-  background: red;
+  margin-left: 108px;
   align-items: center;
+  justify-content: center;
 `;
 const StyleMenu = styled.a`
   margin-right: 24px;

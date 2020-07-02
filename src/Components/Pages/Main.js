@@ -1,7 +1,6 @@
 /* eslint-disable import/no-duplicates */
 import React from 'react';
 // import styled from 'styled-components';
-import globalStyles from '../../Style/GlobalStyles';
 import MainSection from '../Layout/MainSection';
 import MainBanner from '../Layout/MainBanner';
 import DeliverySection from '../Layout/DeliverySection';
@@ -13,7 +12,7 @@ const MainPage = () => {
   return (
     <div>
       <globalStyles />
-      <MainHeader />
+      <MainHeader page="Main" />
       <MainBanner
         title="Want Burgers?"
         text="Food, drinks, groceries, and more available for delivery and pickup."

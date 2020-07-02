@@ -3,7 +3,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
-import FeedHeader from '../Layout/FeedHeader';
+import FeedHeader from '../Layout/MainHeader';
+import MainHeader from '../Layout/FeedHeader';
 import SubBanner from '../Layout/SubBanner';
 import SubHeader from '../Layout/SubHeader';
 import EventSection from '../Layout/EventSection';
@@ -38,9 +39,9 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
   // console.log(orderby.data);
   // console.log(favorite.data);
   // console.log(getinfast.data);
-
   return (
     <FeedWrapperBlock>
+      <MainHeader page="Feed" />
       <FeedHeader />
       <SubBanner />
       <SubHeader />

@@ -12,11 +12,11 @@ const MainHeaderBlock = styled.div`
   padding: 0 15% 0 15%;
   background: #ffdf18;
 `;
-
 const MainHeader = () => {
   return (
     <MainHeaderBlock>
       <Logo />
+      {}
       <Member />
     </MainHeaderBlock>
   );

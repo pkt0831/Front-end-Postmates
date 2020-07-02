@@ -6,35 +6,20 @@ const SearchWrap = styled.div`
   width: 200px;
   height: 100%;
   align-items: center;
-  background: green;
+  /* background: green; */
 `;
 const SearchInput = styled.input`
+  max-width: 380px;
   text-rendering: auto;
-  color: -internal-light-dark-color(black, white);
   letter-spacing: normal;
   word-spacing: normal;
-  text-transform: none;
   text-indent: 0px;
   text-shadow: none;
-  display: inline-block;
   text-align: start;
-  background-color: -internal-light-dark-color(
-    rgb(255, 255, 255),
-    rgb(59, 59, 59)
-  );
-  cursor: text;
-  margin: 0em;
+  border: none;
   font: 400 13.3333px Arial;
-  padding: 1px 2px;
-  border-width: 2px;
-  border-style: inset;
-  border-color: -internal-light-dark-color(
-    rgb(118, 118, 118),
-    rgb(195, 195, 195)
-  );
-  border-image: initial;
 `;
-const SearchSvg = styled.span`
+const SearchIcon = styled.span`
   width: 50px;
   height: 50px;
   background: red;
@@ -42,7 +27,7 @@ const SearchSvg = styled.span`
 const Search = () => {
   return (
     <SearchWrap>
-      <SearchSvg />
+      <SearchIcon />
       <SearchInput placeholder="Search for anything..." />
     </SearchWrap>
   );
