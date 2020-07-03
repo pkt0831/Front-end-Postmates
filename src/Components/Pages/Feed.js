@@ -3,33 +3,26 @@
 import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
-import FeedHeader from '../Layout/MainHeader';
-import MainHeader from '../Layout/FeedHeader';
 import SubBanner from '../Layout/SubBanner';
 import SubHeader from '../Layout/SubHeader';
 import EventSection from '../Layout/EventSection';
 import StoreCategory from '../Layout/StoreCategory';
 import CategoryList from '../Layout/CategoryList';
+import MainHeader from '../Layout/MainHeader';
 
 const FeedWrapperBlock = styled.div`
   width: 100%;
-
   /* background-color: #f4f4f4; */
 `;
 const FeedWrapper = styled.div`
-
   margin: 0 auto;
-
   /* background-color: #ccc; */
-
   ${Media.desktop`
   width: 1024px;
   `}
-
   ${Media.tablet`
   width: 100%;
   `}
-
   ${Media.mobile`
   width: 100%;
   `}
@@ -39,13 +32,12 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
   // console.log(orderby.data);
   // console.log(favorite.data);
   // console.log(getinfast.data);
+
   return (
     <FeedWrapperBlock>
       <MainHeader page="Feed" />
-      <FeedHeader />
       <SubBanner />
       <SubHeader />
-
       <FeedWrapper>
         <EventSection />
 
