@@ -3,8 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from '../Items/Logo';
 import Member from '../Items/Member';
-import Search from '../Items/Search';
-import MainMenu from '../Items/MainMenu';
+// import Search from '../Items/Search';
+// import MainMenu from '../Items/MainMenu';
 
 const MainHeaderBlock = styled.div`
   display: flex;
@@ -15,13 +15,13 @@ const MainHeaderBlock = styled.div`
   background: ${(props) => props.background};
 `;
 
-const MainHeader = ({ page }) => {
-  console.log(page);
+const MainHeader = () => {
+  // console.log(PageChange);
   return (
-    <MainHeaderBlock background={page === 'Item' ? 'White' : '#ffdf18'}>
+    <MainHeaderBlock>
       <Logo />
-      {page === 'Feed' ? <Search /> : ''}
-      {page === 'Feed' ? <MainMenu /> : ''}
+      {/* {page === 'Feed' ? <Search /> : ''}
+      {page === 'Feed' ? <MainMenu /> : ''} */}
       <Member />
     </MainHeaderBlock>
   );

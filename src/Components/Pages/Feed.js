@@ -3,8 +3,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Media from '../../Style/Media';
-import SubBanner from '../Layout/SubBanner';
-import SubHeader from '../Layout/SubHeader';
 import EventSection from '../Layout/EventSection';
 import StoreCategory from '../Layout/StoreCategory';
 import CategoryList from '../Layout/CategoryList';
@@ -35,10 +33,8 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
 
   return (
     <FeedWrapperBlock>
-      <MainHeader page="Feed" />
-      <SubBanner />
-      <SubHeader />
       <FeedWrapper>
+        <MainHeader page="Feed" />
         <EventSection />
 
         <StoreCategory
