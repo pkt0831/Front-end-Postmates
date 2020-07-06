@@ -57,11 +57,17 @@ const SignUpBtn = styled.button`
   border-radius: 16px;
   cursor: pointer;
 `;
-const Member = () => {
+const Member = (hidden) => {
+  console.log(hidden);
+
+  const hiddenChange = (setHidden) => {
+    setHidden(true);
+  };
+
   return (
     <MemberWrap>
-      <LoginBtn>LogIn</LoginBtn>
-      <SignUpBtn>signup</SignUpBtn>
+      <LoginBtn onClick={hiddenChange}>LogIn</LoginBtn>
+      <SignUpBtn onClick={hiddenChange}>signup</SignUpBtn>
     </MemberWrap>
   );
 };

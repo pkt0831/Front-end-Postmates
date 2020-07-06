@@ -1,10 +1,10 @@
 // 0701 seungeun
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Logo from '../Items/Logo';
 import Member from '../Items/Member';
-// import Search from '../Items/Search';
-// import MainMenu from '../Items/MainMenu';
+import Search from '../Items/Search';
+import MainMenu from '../Items/MainMenu';
 
 const MainHeaderBlock = styled.div`
   display: flex;
@@ -16,13 +16,15 @@ const MainHeaderBlock = styled.div`
 `;
 
 const MainHeader = () => {
-  // console.log(PageChange);
+  const [hidden, setHidden] = useState(true);
   return (
     <MainHeaderBlock>
       <Logo />
+      {hidden === false ? '' : <Search />}
       {/* {page === 'Feed' ? <Search /> : ''}
       {page === 'Feed' ? <MainMenu /> : ''} */}
-      <Member />
+      {hidden === false ? '' : <MainMenu />}
+      <Member hidden={hidden} setHidden={setHidden} />
     </MainHeaderBlock>
   );
 };
