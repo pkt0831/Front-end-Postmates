@@ -59,18 +59,18 @@ const MemberWrap = styled.div`
 //   cursor: pointer;
 // `;
 
-const Member = ({ initInput }) => {
+const Member = ({ initInput, changeTitle }) => {
   // const hiddenChange = (setHidden) => {
   //   setHidden(false);
   //   console.log(setHidden);
   // };
-  console.log(initInput);
+  console.log(changeTitle);
 
   return (
     <MemberWrap>
       <LoginBtn onClick={initInput} active text="LOG IN" />
       {/* <SignUpBtn onClick={hiddenChange}>signup</SignUpBtn> */}
-      <LoginBtn initInput={initInput} active={false} text="SIGN UP" />
+      <LoginBtn onClick={changeTitle} active={false} text="SIGN UP" />
     </MemberWrap>
   );
 };

@@ -1,5 +1,5 @@
 // 0701 seungeun
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import Logo from '../Items/Logo';
 import Member from '../Items/Member';
@@ -21,22 +21,26 @@ const MainHeader = () => {
   //   setHidden(false);
   // };
   // console.log(changeHeader);
+  const [state, setState] = useState({ title: 'Postmates' });
   const inputRef = useRef();
   const initInput = () => {
     console.log('initInput');
     inputRef.current.value = '';
     inputRef.current.focus();
   };
+  const changeTitle = () => {
+    setState({ title: inputRef.current.value });
+  };
   return (
     <MainHeaderBlock>
-      <Logo />
+      <Logo state={state} />
       <Search inputRef={inputRef} />
       {/* {hidden === false ? '' : <Search />} */}
       {/* {page === 'Feed' ? <Search /> : ''}
       {page === 'Feed' ? <MainMenu /> : ''} */}
       {/* {hidden === false ? '' : <MainMenu />} */}
       <MainMenu />
-      <Member initInput={initInput} />
+      <Member initInput={initInput} changeTitle={changeTitle} />
     </MainHeaderBlock>
   );
 };
