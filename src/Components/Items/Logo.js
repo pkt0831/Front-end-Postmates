@@ -9,8 +9,8 @@ const LogoStyle = styled.a`
   cursor: pointer;
 `;
 
-const Logo = () => {
-  return <LogoStyle>Postmates</LogoStyle>;
+const Logo = ({ onClick }) => {
+  return <LogoStyle onClick={onClick}>Postmates</LogoStyle>;
 };
 
 export default Logo;

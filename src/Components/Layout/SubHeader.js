@@ -13,13 +13,23 @@ const SubHeaderBlock = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
+  font-family: 'Postmates Std';
+  position: sticky;
+  top: 0;
+  background-color: rgb(255, 255, 255);
 
   ${Media.desktop`
   height: 69px;
+
+  border-bottom: 1px solid rgba(217, 219, 224, 0.5);
+  
   `}
   ${Media.tablet`
   height: 69px;
   padding: 0 24px;
+
+  border-bottom: 1px solid rgba(217, 219, 224, 0.5);
   `}
   ${Media.mobile`
   height: 55px;
@@ -29,6 +39,7 @@ const SubHeaderBlock = styled.div`
 
   .wrap-subheader-item {
     display: flex;
+    align-items: center;
     ${Media.desktop`
       width: 1024px;
     `}
@@ -41,15 +52,42 @@ const SubHeaderBlock = styled.div`
   }
 `;
 
-const SubHeader = () => {
+const Bulkhead = styled.div`
+  height: 30px;
+  width: 1px;
+  margin-right: 17px;
+  background: rgba(217, 219, 224, 0.5);
+  ${Media.mobile`
+     display: none;
+  `}
+`;
+
+const SubHeader = ({
+  page,
+  menuList,
+  handleClickCategories,
+  isOpenCategories,
+  handleClickScrollTo,
+}) => {
   return (
     <SubHeaderBlock>
       <div className="wrap-subheader-item">
         <BreadCrumbs />
+        <Bulkhead />
         <SubLocation />
-        <MenuCategories />
-        <SearchItems />
-        <Cart />
+        {page === 'item' && <Bulkhead />}
+        {page === 'item' && (
+          <MenuCategories
+            menuList={menuList}
+            handleClickCategories={handleClickCategories}
+            isOpenCategories={isOpenCategories}
+            handleClickScrollTo={handleClickScrollTo}
+          />
+        )}
+        {page === 'item' && <Bulkhead />}
+        {page === 'item' && <SearchItems />}
+        {page === 'item' && <Bulkhead />}
+        {page === 'item' && <Cart />}
       </div>
     </SubHeaderBlock>
   );

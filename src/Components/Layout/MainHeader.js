@@ -1,5 +1,5 @@
 // 0701 seungeun
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Logo from '../Items/Logo';
 import Member from '../Items/Member';
@@ -16,15 +16,27 @@ const MainHeaderBlock = styled.div`
 `;
 
 const MainHeader = () => {
-  const [hidden, setHidden] = useState(true);
+  // const [hidden, setHidden] = useState(true);
+  // const changeHeader = () => {
+  //   setHidden(false);
+  // };
+  // console.log(changeHeader);
+  const inputRef = useRef();
+  const initInput = () => {
+    console.log('initInput');
+    inputRef.current.value = '';
+    inputRef.current.focus();
+  };
   return (
     <MainHeaderBlock>
       <Logo />
-      {hidden === false ? '' : <Search />}
+      <Search inputRef={inputRef} />
+      {/* {hidden === false ? '' : <Search />} */}
       {/* {page === 'Feed' ? <Search /> : ''}
       {page === 'Feed' ? <MainMenu /> : ''} */}
-      {hidden === false ? '' : <MainMenu />}
-      <Member hidden={hidden} setHidden={setHidden} />
+      {/* {hidden === false ? '' : <MainMenu />} */}
+      <MainMenu />
+      <Member initInput={initInput} />
     </MainHeaderBlock>
   );
 };

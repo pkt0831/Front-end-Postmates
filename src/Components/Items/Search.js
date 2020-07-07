@@ -24,11 +24,13 @@ const SearchIcon = styled.span`
   height: 50px;
   background: red;
 `;
-const Search = () => {
+const Search = ({ inputRef }) => {
+  console.log(inputRef);
+
   return (
     <SearchWrap>
       <SearchIcon />
-      <SearchInput placeholder="Search for anything..." />
+      <SearchInput ref={inputRef} placeholder="Search for anything..." />
     </SearchWrap>
   );
 };

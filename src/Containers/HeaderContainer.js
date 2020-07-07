@@ -1,14 +1,26 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import SubHeader from '../Components/Layout/SubHeader';
 import SubBanner from '../Components/Layout/SubBanner';
+import { openCategories } from '../Modules/MainReducer';
 
 const HeaderContainer = () => {
-  const { page, storeUrl } = useSelector((state) => ({
+  const dispatch = useDispatch();
+  const {
+    page,
+    storeUrl,
+    menuList,
+    isOpenCategories,
+    categoryRef,
+  } = useSelector((state) => ({
     page: state.Main.page,
     storeUrl: state.Item.store.store_img,
+    menuList: state.Item.store.menu,
+    isOpenCategories: state.Main.isOpenCategories,
+    categoryRef: state.Ref.categoryRef,
   }));
 
+  // 페이지에 따라 sub-banner 배경 변경
   const getBackground = () => {
     // eslint-disable-next-line operator-linebreak
     const feedUrl =
@@ -17,11 +29,30 @@ const HeaderContainer = () => {
     return url;
   };
 
+  // 카테고리 list open
+  const handleClickCategories = () => {
+    dispatch(openCategories(!isOpenCategories));
+  };
+
+  // 카테고리 click시 스트롤 해당 지점으로 이동
+  const handleClickScrollTo = (id) => {
+    const yaxis = categoryRef.filter(({ itemKey }) => itemKey === id)[0].ref
+      .offsetTop;
+    window.scrollTo({ top: yaxis - 60, behavior: 'smooth' });
+    console.log(window.pageYOffset);
+  };
+
   const generateSubHeader = () => {
     return (
       <>
         <SubBanner page={page} getBackground={getBackground} />
-        <SubHeader />
+        <SubHeader
+          page={page}
+          menuList={menuList}
+          handleClickCategories={handleClickCategories}
+          isOpenCategories={isOpenCategories}
+          handleClickScrollTo={handleClickScrollTo}
+        />
       </>
     );
   };

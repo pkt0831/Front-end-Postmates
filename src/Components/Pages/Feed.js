@@ -8,8 +8,10 @@ import StoreCategory from '../Layout/StoreCategory';
 import CategoryList from '../Layout/CategoryList';
 import MainHeader from '../Layout/MainHeader';
 
-const FeedWrapperBlock = styled.div`
+const FeedMainBlock = styled.main`
   width: 100%;
+  padding: 30px 36px 0 36px;
+
   /* background-color: #f4f4f4; */
 `;
 const FeedWrapper = styled.div`
@@ -32,22 +34,25 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
   // console.log(getinfast.data);
 
   return (
-    <FeedWrapperBlock>
+    <FeedMainBlock>
       <FeedWrapper>
         <MainHeader page="Feed" />
         <EventSection />
 
         <StoreCategory
+          category="getinfast"
           data={getinfast.data}
           title="Get in Fast"
           info="get in fast category"
         />
         <StoreCategory
+          category="favorite"
           data={favorite.data}
           title="Favorite"
           info="favorite category"
         />
         <StoreCategory
+          category="orderby"
           data={orderby.data}
           title="Order By"
           info="order by category"
@@ -56,6 +61,7 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
         <CategoryList />
 
         <StoreCategory
+          category="nearby"
           data={nearby.data}
           title="Near By"
           info="near by category"
@@ -93,7 +99,7 @@ const Feed = ({ nearby, orderby, favorite, getinfast }) => {
           ))}
         </ul>
       </div> */}
-    </FeedWrapperBlock>
+    </FeedMainBlock>
   );
 };
 

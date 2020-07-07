@@ -67,6 +67,7 @@ const ContentBlock = styled.div`
       line-height: 1.43;
 
       font-size: 14px;
+      font-weight: 200;
       color: rgba(143, 149, 163, 0.9);
     }
   }
@@ -113,10 +114,7 @@ const MenuItem = ({ item }) => {
 
       <ItemPopup
         item={item}
-        title="test"
         // eslint-disable-next-line react/no-children-prop
-        children="testtesttest"
-        buttonText="ADD TO CART"
         visible={dialog}
         onCancel={onCancel}
       />

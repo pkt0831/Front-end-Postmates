@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import MenuCategoryTitle from '../Items/MenuCategoryTitle';
 import MenuItem from '../Items/MenuItem';
@@ -19,10 +19,22 @@ const StoreListBlock = styled.ul`
   `}
 `;
 
-const MenuCategory = ({ key, category, list }) => {
+const MenuCategory = ({
+  itemKey,
+  category,
+  list,
+  setCategoryRef,
+  dispatch,
+}) => {
+  const categoryRef = useRef();
+
+  useEffect(() => {
+    dispatch(setCategoryRef({ itemKey, category, ref: categoryRef.current }));
+  }, [category, dispatch, itemKey, setCategoryRef]);
+
   return (
-    <li key={key}>
-      <MenuCategoryTitle category={category} />
+    <li key={`itemkey-${itemKey}`} id={`item-${itemKey}`} ref={categoryRef}>
+      <MenuCategoryTitle category={category} categoryRef={categoryRef} />
       <StoreListBlock>
         {list.map((item) => (
           <MenuItem item={item} />
